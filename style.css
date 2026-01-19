@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+body, html{
+    scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: rgba(26, 11, 46, 1);
@@ -11,6 +15,9 @@ body {
 }
 
 /* common design */
+.hidden{
+    display: none;
+}
 a {
   text-decoration: none;
   color: white;
@@ -133,6 +140,25 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.banner-img::after{
+    content: "NEW";
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    transform: translate(-5%,-10%);
+    box-shadow: 0 0 10px #00FF88,
+                0 0 20px #00FF88;
+    height: 35px;
+    width: 70px;
+    color: black;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    background-color: #00FF88;
 }
 .banner-content {
   margin-top: 40px;
@@ -145,7 +171,7 @@ button:hover {
 }
 .banner-content p{
     text-align: center;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 .banner-content h1{
     font-size: 48px;
@@ -170,8 +196,61 @@ button:hover {
   border-radius: 999px;
   color: #00ff88;
   background: transparent;
+  transition: transform 0.2s linear;
 }
-
+.message-btn:hover{
+    transform: scale(1.05);
+}
+/* podcast section design */
+#about{
+    /* border: 2px solid red; */
+    margin: 40px auto;
+}
+.about-podcast-content{
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.about-podcast-content p{
+    text-align: center;
+    opacity: 0.8;
+    max-width: 72ch;
+    line-height: 24px;
+}
+h3{
+    font-size: 44px;
+}
+.podcast-card-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgb(66, 1, 66);
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    /* border: 2px solid; */
+    padding: 20px;
+}
+.card h2{
+    text-align: center;
+    font-size: 44px;
+    color: #00FF88;
+}
+.card p{
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.8;
+    text-align: center;
+}
 /* responsive section */
 @media screen and (max-width: 576px) {
   .width {
@@ -198,4 +277,20 @@ button:hover {
   .banner-content h1{
     font-size: 38px;
 }
+.banner-img::after{
+    right: -10%;
+    transform: translateY(10%);
+}
+.podcast-card-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+h3{
+    font-size: 38px;
+}
+.card p{
+    font-size: 14px;
+}
+.card h2{
+    font-size: 38px;}
 }
