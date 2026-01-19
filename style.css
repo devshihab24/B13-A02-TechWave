@@ -28,7 +28,7 @@ ul {
 }
 .width {
   width: 80%;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 .common-btn {
   padding: 12px 20px;
@@ -64,6 +64,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  margin: 0 auto;
 }
 .navbar ul {
   display: flex;
@@ -203,10 +204,6 @@ button:hover {
   transform: scale(1.05);
 }
 /* podcast section design */
-#about {
-  /* border: 2px solid red; */
-  margin: 40px auto;
-}
 .about-podcast-content {
   /* border: 2px solid; */
   display: flex;
@@ -288,14 +285,12 @@ h3 {
   font-size: 24px;
 }
 .tech-card > p,
-.episode-card p {
+.episode-card p,
+.host-container p {
   opacity: 0.6;
 }
 
 /* featured episodes section */
-#episodes {
-  margin: 40px auto;
-}
 .episodes-container {
   padding: 40px 0;
   display: grid;
@@ -331,10 +326,53 @@ h3 {
 .video iframe {
   width: 100%;
 }
+
+/* host section */
+.host-container {
+  background: rgba(53, 17, 101, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 40px;
+  gap: 30px;
+  border-radius: 20px;
+}
+.host-container ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.host-content {
+  display: grid;
+  gap: 15px;
+}
+.host-content h4 {
+  font-size: 28px;
+}
+.icon img{
+    width: 16px;
+}
+.icon{
+    border: 2px solid rgba(83, 60, 114, 1);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+}
+.icon:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(247, 233, 63, 1),
+                 0 0 20px rgba(247, 233, 63, 1);
+}
 /* responsive section */
 @media screen and (max-width: 576px) {
   .width {
     width: 95%;
+    margin: 20px auto;
   }
   .menu-icon {
     display: inline !important;
@@ -347,7 +385,7 @@ h3 {
     padding-top: 0;
   }
   .banner-img {
-    margin-top: 100px;
+    margin-top: 80px;
     height: 200px;
     width: 200px;
   }
@@ -377,7 +415,8 @@ h3 {
   #why-choose {
     padding: 20px 0;
   }
-  .tech-card-container, .episodes-container {
+  .tech-card-container,
+  .episodes-container {
     grid-template-columns: repeat(1, 1fr);
   }
   .col-span {
@@ -385,5 +424,19 @@ h3 {
   }
   .row-span {
     grid-row: span 1;
+  }
+  .host-container {
+    flex-direction: column;
+    padding: 20px 10px;
+    box-sizing: border-box;
+  }
+  .host-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .host-container p{
+    text-align: center;
   }
 }
