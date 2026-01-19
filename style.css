@@ -258,6 +258,7 @@ h3 {
 #why-choose {
   background: rgb(35, 14, 61);
   padding: 40px 0;
+  /* display: none; */
 }
 .tech-card-container {
   display: grid;
@@ -282,11 +283,53 @@ h3 {
   background: rgba(53, 17, 101, 0.4);
   border-radius: 10px;
 }
-.tech-card h4{
-    font-size: 22px;
+.tech-card h4,
+.card-info h4 {
+  font-size: 24px;
 }
-.tech-card>p{
-    opacity: 0.6;
+.tech-card > p,
+.episode-card p {
+  opacity: 0.6;
+}
+
+/* featured episodes section */
+#episodes {
+  margin: 40px auto;
+}
+.episodes-container {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  /* border: 2px solid; */
+}
+.episode-card {
+  display: grid;
+  gap: 15px;
+  background: rgba(53, 17, 101, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card-info {
+  padding: 0 20px;
+  display: grid;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+.timer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  color: #00ff88;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+.video iframe {
+  width: 100%;
 }
 /* responsive section */
 @media screen and (max-width: 576px) {
@@ -331,10 +374,10 @@ h3 {
   .card h2 {
     font-size: 38px;
   }
-  #why-choose{
+  #why-choose {
     padding: 20px 0;
   }
-  .tech-card-container {
+  .tech-card-container, .episodes-container {
     grid-template-columns: repeat(1, 1fr);
   }
   .col-span {
