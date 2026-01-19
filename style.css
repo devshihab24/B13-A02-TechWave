@@ -313,7 +313,7 @@ h3 {
   padding: 0 20px;
   display: grid;
   gap: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .timer {
   display: flex;
