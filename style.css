@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgba(26, 11, 46, 1);
+  color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* common design */
+a {
+  text-decoration: none;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+.width {
+  width: 80%;
+  margin: 0 auto;
+}
+.common-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(145, 0, 248, 1),
+    rgba(247, 233, 63, 1),
+    rgba(251, 9, 180, 1),
+    rgba(145, 0, 248, 1)
+  );
+  color: white;
+  background-size: 300%;
+  font-weight: 600;
+  transition: transform 0.2s linear;
+  animation: gradient-background 2.5s linear infinite;
+}
+.common-btn:hover {
+  transform: scale(1.05);
+}
+
+/* header section design */
+.menu-icon {
+  display: none !important;
+}
+button:hover {
+  cursor: pointer;
+}
+.navbar {
+  display: flex;
+  /* border: 2px solid; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.navbar ul a {
+  position: relative;
+}
+.navbar ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 8px;
+  background-color: white;
+  transition: width 0.2s linear;
+}
+.navbar ul a:hover::after {
+  width: 100%;
+}
+.logo {
+  font-size: 32px;
+}
+.logo span {
+  background: linear-gradient(
+    45deg,
+    rgba(145, 0, 248, 1),
+    rgba(247, 233, 63, 1),
+    rgba(251, 9, 180, 1),
+    rgba(145, 0, 248, 1)
+  );
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-background 2.5s linear infinite;
+}
+@keyframes gradient-background {
+  to {
+    background-position: 300%;
+  }
+}
+
+/* banner section design */
+.banner {
+  /* border: 2px solid; */
+  background-image: url(assets/hero-bg.png);
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-top: 1px solid rgb(66, 1, 66);
+  padding-top: 40px;
+}
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banner-img {
+  /* border: 2px solid; */
+  margin-top: 40px;
+  background-image: url(assets/hero-circle.png);
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-content {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.banner-content p{
+    text-align: center;
+    opacity: 0.9;
+}
+.banner-content h1{
+    font-size: 48px;
+}
+.btn-container > button img {
+  height: 15px;
+  width: 15px;
+}
+.btn-container {
+  display: flex;
+  gap: 20px;
+}
+.btn-container > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.message-btn {
+  padding: 12px 20px;
+  border: 2px solid #00ff88;
+  border-radius: 999px;
+  color: #00ff88;
+  background: transparent;
+}
+
+/* responsive section */
+@media screen and (max-width: 576px) {
+  .width {
+    width: 95%;
+  }
+  .menu-icon {
+    display: inline !important;
+  }
+  .navbar > ul,
+  .navbar > button {
+    display: none;
+  }
+  .banner{
+    padding-top: 0;
+  }
+  .banner-img {
+    margin-top: 100px;
+    height: 200px;
+    width: 200px;
+  }
+  .banner-img img{
+    width: 100px;
+  }
+  .banner-content h1{
+    font-size: 38px;
+}
+}
