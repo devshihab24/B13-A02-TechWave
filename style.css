@@ -44,11 +44,11 @@ ul {
   color: white;
   background-size: 300%;
   font-weight: 600;
-  transition: transform 0.2s linear;
-  animation: gradient-background 2.5s linear infinite;
+  transition: transform 0.2s linear 0.3s;
+  animation: gradient-background 4.5s linear infinite;
 }
 .common-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.01);
 }
 
 /* header section design */
@@ -104,11 +104,29 @@ button:hover {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-background 2.5s linear infinite;
+  animation: gradient-background 3.5s linear infinite;
 }
 @keyframes gradient-background {
   to {
     background-position: 300%;
+  }
+}
+@keyframes glowing {
+  0% {
+    box-shadow:
+      0 0 10px #00ff88,
+      0 0 15px #00ff88;
+  }
+  50% {
+    box-shadow:
+      0 0 10px #00ff88,
+      0 0 15px #00ff88,
+      0 0 25px #00ff88;
+  }
+  100% {
+    box-shadow:
+      0 0 10px #00ff88,
+      0 0 15px #00ff88;
   }
 }
 
@@ -117,7 +135,7 @@ button:hover {
   /* border: 2px solid; */
   background-image: url(assets/hero-bg.png);
   width: 100%;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
@@ -132,7 +150,7 @@ button:hover {
 }
 .banner-img {
   /* border: 2px solid; */
-  margin-top: 40px;
+  /* margin-top: 40px; */
   background-image: url(assets/hero-circle.png);
   height: 300px;
   width: 300px;
@@ -150,7 +168,6 @@ button:hover {
   top: 5%;
   right: 10%;
   transform: translate(-5%, -10%);
-  box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
   height: 35px;
   width: 70px;
   color: black;
@@ -160,7 +177,9 @@ button:hover {
   align-items: center;
   border-radius: 999px;
   background-color: #00ff88;
+  animation: glowing 2s linear infinite;
 }
+
 .banner-content {
   margin-top: 40px;
   display: flex;
@@ -198,10 +217,10 @@ button:hover {
   color: #00ff88;
   font-weight: 600;
   background: transparent;
-  transition: transform 0.2s linear;
+  transition: transform 0.2s linear 0.3s;
 }
 .message-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.01);
 }
 /* podcast section design */
 .about-podcast-content {
@@ -298,7 +317,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 40px;
   /* border: 2px solid; */
 }
@@ -308,6 +327,15 @@ h3 {
   background: rgba(53, 17, 101, 0.4);
   border-radius: 12px;
   overflow: hidden;
+  transition: all 0.5s linear 0.5s;
+}
+.episode-card:hover {
+  transform: translateY(-12px);
+  cursor: pointer;
+  box-shadow:
+    0 0 10px rgb(6, 68, 79),
+    0 0 20px rgba(247, 233, 63, 1),
+    0 0 40px rgba(53, 17, 101, 0.4);
 }
 .card-info {
   padding: 0 20px;
@@ -367,7 +395,9 @@ h3 {
 .icon:hover {
   transform: translateY(-10px);
   cursor: pointer;
-  box-shadow: 0 0 10px rgb(247, 140, 63), 0 0 20px rgba(247, 233, 63, 1);
+  box-shadow:
+    0 0 10px rgb(247, 140, 63),
+    0 0 20px rgba(247, 233, 63, 1);
   border: 2px solid transparent;
 }
 #host h3 {
@@ -406,6 +436,21 @@ footer {
   font-size: 56px;
   text-align: center;
 }
+footer hr {
+  border: none;
+  height: 2px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    rgba(145, 0, 248, 1),
+    rgba(251, 9, 180, 1),
+    rgba(145, 0, 248, 1)
+  );
+  background-size: 300% 300%;
+  animation: gradient-background 10.5s linear infinite;
+}
 /* responsive section */
 @media screen and (max-width: 576px) {
   .width {
@@ -431,7 +476,7 @@ footer {
     width: 200px;
   }
   .banner-img img {
-    width: 100px;
+    width: 80px;
   }
   .banner-content h1 {
     font-size: 38px;
